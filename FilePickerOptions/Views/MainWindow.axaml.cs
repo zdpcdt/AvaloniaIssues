@@ -48,6 +48,12 @@ public partial class MainWindow : Window
             new FilePickerSaveOptions
             {
                 Title = "Save File",
+                FileTypeChoices =
+                    [
+                        new FilePickerFileType("Docs") { Patterns = ["*.doc"] },
+                        new FilePickerFileType("Text files") { Patterns = ["*.txt"] },
+                        new FilePickerFileType("Pages") { Patterns = ["*.pages"] },
+                    ]
             }
         );
     }

@@ -1,5 +1,6 @@
-﻿using Avalonia;
-using System;
+﻿using System;
+using Avalonia;
+using Avalonia.Dialogs;
 
 namespace FilePickerOptions;
 
@@ -17,5 +18,6 @@ sealed class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
+            .UseManagedSystemDialogs()
             .LogToTrace();
 }

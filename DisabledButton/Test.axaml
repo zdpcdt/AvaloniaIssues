@@ -1,0 +1,85 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <StackPanel Spacing="16" Background="Black">
+            <WrapPanel ItemSpacing="16">
+                <Button Theme="{DynamicResource SolidButton}" Content="Normal" />
+                <Button Theme="{DynamicResource SolidButton}" Content="Disabled" IsEnabled="False" />
+                <Button Theme="{DynamicResource SolidButton}" Content="WHY" IsEnabled="False">
+                    <Button.Styles>
+                        <Style Selector=":disabled /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Foreground" Value="Orange" />
+                        </Style>
+                    </Button.Styles>
+                </Button>
+            </WrapPanel>
+            <WrapPanel ItemSpacing="16">
+                <Button Theme="{DynamicResource MyButtonTheme}" Content="Normal" />
+                <Button Theme="{DynamicResource MyButtonTheme}" Content="Disabled" IsEnabled="False" />
+                <Button Theme="{DynamicResource MyButtonTheme}" Content="WHY" IsEnabled="False">
+                    <Button.Styles>
+                        <Style Selector=":disabled /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Foreground" Value="Orange" />
+                        </Style>
+                    </Button.Styles>
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="MyButtonTheme" TargetType="Button">
+        <Setter Property="Padding" Value="12 0" />
+        <Setter Property="MinHeight" Value="32" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="3" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="RenderTransform" Value="none" />
+        <Setter Property="BackgroundSizing" Value="OuterBorderEdge" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="Blue" />
+        <Setter Property="BorderBrush" Value="Blue" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="Button">
+                <ContentPresenter
+                    Name="PART_ContentPresenter"
+                    Padding="{TemplateBinding Padding}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                    BackgroundSizing="{TemplateBinding BackgroundSizing}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    TextElement.FontSize="{TemplateBinding FontSize}"
+                    TextElement.FontWeight="{TemplateBinding FontWeight}"
+                    UseLayoutRounding="False" />
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}" />
+            <Setter Property="BorderBrush" Value="{TemplateBinding BorderBrush}" />
+        </Style>
+
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="SkyBlue" />
+            <Setter Property="BorderBrush" Value="SkyBlue" />
+        </Style>
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="LightBlue" />
+            <Setter Property="BorderBrush" Value="LightBlue" />
+        </Style>
+
+        <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Foreground" Value="LightGray" />
+            <Setter Property="Background" Value="Gray" />
+            <Setter Property="BorderBrush" Value="Gray" />
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>

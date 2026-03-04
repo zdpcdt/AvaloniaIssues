@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DisabledButton/DisabledButton.csproj" />
+  <Project Path="FilePickerOptions/FilePickerOptions.csproj" />
+</Solution>

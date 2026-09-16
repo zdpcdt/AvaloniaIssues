@@ -1,0 +1,11 @@
+﻿<Solution>
+  <Project Path="ContentPagePadding.Android/ContentPagePadding.Android.csproj">
+    <Deploy />
+  </Project>
+  <Project Path="ContentPagePadding.Browser/ContentPagePadding.Browser.csproj" />
+  <Project Path="ContentPagePadding.Desktop/ContentPagePadding.Desktop.csproj" />
+  <Project Path="ContentPagePadding.iOS/ContentPagePadding.iOS.csproj">
+    <Deploy />
+  </Project>
+  <Project Path="ContentPagePadding/ContentPagePadding.csproj" />
+</Solution>

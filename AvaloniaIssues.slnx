@@ -1,4 +1,11 @@
 <Solution>
+  <Folder Name="/ContentPagePadding/">
+    <Project Path="ContentPagePadding/ContentPagePadding.Android/ContentPagePadding.Android.csproj">
+      <Deploy />
+    </Project>
+    <Project Path="ContentPagePadding/ContentPagePadding.Desktop/ContentPagePadding.Desktop.csproj" />
+    <Project Path="ContentPagePadding/ContentPagePadding/ContentPagePadding.csproj" />
+  </Folder>
   <Project Path="DisabledButton/DisabledButton.csproj" />
   <Project Path="FilePickerOptions/FilePickerOptions.csproj" />
 </Solution>

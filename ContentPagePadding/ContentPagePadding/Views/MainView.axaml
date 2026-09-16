@@ -1,0 +1,25 @@
+<ContentPage xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:ContentPagePadding.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ContentPagePadding.Views.MainView"
+             x:DataType="vm:MainViewModel">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <ContentPage.TopCommandBar>
+        <ContentControl IsVisible="{Binding #Switch.IsChecked}" Content="TopCommandBar" Background="Green" />
+    </ContentPage.TopCommandBar>
+    <ContentPage.BottomCommandBar>
+        <ContentControl IsVisible="{Binding #Switch2.IsChecked}" Content="BottomCommandBar" Background="Red" />
+    </ContentPage.BottomCommandBar>
+    <StackPanel Background="LightBlue">
+        <ToggleSwitch Name="Switch" Content="Top Visible" />
+        <ToggleSwitch Name="Switch2" Content="Bottom Visible" />
+    </StackPanel>
+</ContentPage>

@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="FullScreenFromMaximizedShrink.MainWindow"
+        Title="Fullscreen-from-maximized shrink repro"
+        Width="1440" Height="733"
+        ExtendClientAreaToDecorationsHint="True"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="24" Spacing="12">
+        <TextBlock FontSize="22" FontWeight="Bold"
+                   Text="Maximized → FullScreen shrinks the window (X11 CSD)" />
+        <TextBlock Text="Steps: click Reproduce. The window should cover the whole screen; instead it shrinks back to 1440×733 while WindowState reports FullScreen." TextWrapping="Wrap" />
+
+        <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8">
+            <Button x:Name="ReproduceButton" Click="OnReproduce"
+                    Content="Reproduce: Maximize → FullScreen" MinWidth="220" />
+            <Button Click="OnReset" Content="Reset: Normal 1440×733" MinWidth="160" />
+            <Button Click="OnMaximize" Content="Maximize" MinWidth="100" />
+            <Button Click="OnFullScreen" Content="FullScreen" MinWidth="100" />
+        </StackPanel>
+
+        <Border Background="#22000000" CornerRadius="8" Padding="16" Margin="0,8">
+            <StackPanel Spacing="4">
+                <TextBlock Text="Live state" FontWeight="Bold" />
+                <TextBlock x:Name="StateText" FontFamily="Consolas,Monospace" FontSize="16" />
+            </StackPanel>
+        </Border>
+
+        <TextBlock Text="Note: with ForceDrawnDecorations = false (Mutter server-side decorations) the same sequence works correctly, so the bug only affects the CSD path."
+                   TextWrapping="Wrap" Opacity="0.7" />
+    </StackPanel>
+</Window>
